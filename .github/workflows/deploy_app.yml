@@ -12,10 +12,15 @@ jobs:
                 uses: actions/setup-node@v1
                 with:
                   node-module: 12.x
+              - uses: borales/actions-yarn@v2.0.0
+                  cmd: install
               
-              - run: npm install -g surge
+              - name: Build React App
+                run : sudo yarn build
+
+              - name: Install Surge
+              
+              - run: yarn add -g surge.
+
               - run: echo "Deploying websites"
-              - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
-
-              - run: echo  ${{ secrets.SURGE_DOMAIN }} | sed 's/./& /g' 
-
+              - run: surge ./build covid19TrackerApp.surge.sh --token ${{ secrets.SURGE_TOKEN }}

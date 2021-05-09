@@ -13,6 +13,7 @@ jobs:
                 with:
                   node-module: 12.x
               - uses: borales/actions-yarn@v2.0.0
+                with:
                   cmd: install
               
               - name: Build React App
@@ -23,4 +24,4 @@ jobs:
               - run: yarn add -g surge.
 
               - run: echo "Deploying websites"
-              - run: surge ./build covid19TrackerApp.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+              - run: surge ./build cov --token ${{ secrets.SURGE_TOKEN }}

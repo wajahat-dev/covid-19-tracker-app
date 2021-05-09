@@ -2,7 +2,7 @@ name: Continuous Deployment for covid-19 tracker app
 on: [push]
 
 jobs:
-    deploy:
+    build:
           runs-on: ubuntu-latest
           steps:
               - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
                   cmd: install
               
               - name: Build React App
-                run : sudo yarn run build
+                run : sudo npm build
 
               - name: Install Surge
               

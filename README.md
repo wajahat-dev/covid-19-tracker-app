@@ -1,1 +1,1 @@
-(clicked me)[covid19TrackerAppWajahat.surge.sh]
+(clicked me)[http://covid19trackerappwajahat.surge.sh/]

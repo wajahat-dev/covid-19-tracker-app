@@ -9,7 +9,7 @@ jobs:
 
               - run: echo "Settings up nodejs"
               - name: Setup nodeJs
-                uses: actions/setup-node@v1
+                uses: actions/setup-node@v2-beta
                 with:
                   node-module: 12.x
               - uses: borales/actions-yarn@v2.0.0
@@ -17,7 +17,7 @@ jobs:
                   cmd: install
               
               - name: Build React App
-                run : sudo yarn build
+                run : sudo yarn run build
 
               - name: Install Surge
               
